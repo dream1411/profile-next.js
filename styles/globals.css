@@ -1,0 +1,28 @@
+.selector {
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* .dropdown-menu {
+  top: 100% !important;
+  right: 0 !important;
+  margin-top: var(--bs-dropdown-spacer) !important;
+} */
+.dropdown-menu.show {
+  display: block;
+  left: -100%;
+  margin-top: 10px;
+}
+
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 10px;
+  left: -100%;
+}

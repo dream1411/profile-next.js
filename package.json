@@ -1,0 +1,38 @@
+{
+  "name": "my-next-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bootstrap": "^5.2.3",
+    "cors": "^2.8.5",
+    "next": "^13.3.0",
+    "next-scripts": "^0.3.4",
+    "nodemailer": "^6.9.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.15.13",
+    "typescript": "5.0.4"
+  },
+  "browser": {
+    "fs": false,
+    "net": false,
+    "dns": false,
+    "child_process": false,
+    "tls": false,
+    "path": false,
+    "os": false
+  }
+}
