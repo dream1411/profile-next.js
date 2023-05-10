@@ -29,4 +29,11 @@
       transform: rotate(360deg);
     }
   }
-  
+  .scrolled{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  }
+  .stickyWrapper{
+   height: 90px;
+  }

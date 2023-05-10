@@ -1,9 +1,22 @@
 import Link from "next/link";
-import React from "react";
+import React ,{ useState, useEffect }from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { useRouter } from "next/router";
-function Header({ userProfile }) {
+import styles from '../styles/Loading.module.css';
+function Header() {
   const router = useRouter();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isScrolled = currentScrollPos > 0;
+      setIsScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   // console.log(userProfile);
   // function handleLogout() {
   //   localStorage.clear();
@@ -53,9 +66,8 @@ function Header({ userProfile }) {
           </div>
         </div>
       </header>
-      <div id="sticky-wrapper" className="sticky-wrapper" >
-        <div>
-        <nav className="navbar navbar-expand-lg bg-light shadow-lg" >
+      <div id="sticky-wrapper"  >
+        <nav className={`navbar navbar-expand-lg bg-light shadow-lg ${isScrolled ? styles.scrolled : ''} ${styles.stickyWrapper}`} >
           <div className="container">
             <Link className="navbar-brand" href="/">
                PHROMMIN INTANI
@@ -148,8 +160,6 @@ function Header({ userProfile }) {
             </div>
           </div>
         </nav>
-        </div>
-      
       </div>
       {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
